@@ -1,0 +1,12 @@
+{
+  "name": "podcast-feed-serializer",
+  "version": "1.0.0",
+  "description": "Serialize & Deserialize RSS Feeds for Podcasts into objects",
+  "main": "index.js",
+  "author": "Alexander Stromer <alexander.stromer@gmail.com> (https://github.com/AlexanderStromer)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AlexanderStromer/podcast-feed-serializer"
+  },
+  "license": "MIT"
+}
