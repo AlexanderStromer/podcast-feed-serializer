@@ -1,11 +1,10 @@
 import { Podcast } from './podcast.model';
 import { PodcastEpisode } from './podcast-episode.model';
 
+import xml2js from 'xml2js';
 import { parseString } from 'xml2js';
-import { Moment } from 'moment';
 import moment from 'moment';
-
-const xml2js: any = import('xml2js');
+import { Moment } from 'moment';
 
 export class FeedSerializer {
   loadFeed(feedXml: string): Promise<Podcast> {
@@ -56,9 +55,9 @@ export class FeedSerializer {
     native.titleDisplay = js['itunes:title'] ? js['itunes:title'][0] : null;
     native.subCategory =
       js['itunes:category'] &&
-      js['itunes:category'][0]['itunes:category'] &&
-      js['itunes:category'][0]['itunes:category'][0].$ &&
-      js['itunes:category'][0]['itunes:category'][0].$.text
+        js['itunes:category'][0]['itunes:category'] &&
+        js['itunes:category'][0]['itunes:category'][0].$ &&
+        js['itunes:category'][0]['itunes:category'][0].$.text
         ? js['itunes:category'][0]['itunes:category'][0].$.text
         : null;
     native.type = js['itunes:type'] ? js['itunes:type'][0] : null;
