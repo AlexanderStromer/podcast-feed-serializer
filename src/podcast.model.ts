@@ -26,10 +26,11 @@ export class Podcast {
 
   sortEpisodesDescending() {
     this.episodes = this.episodes.sort((a, b) => {
-      const aDate = a.publicationDate?.toDate ?? new Date();
-      const bDate = b.publicationDate?.toDate ?? new Date();
+      if (!a.publicationDate || !b.publicationDate) {
+        return !a.publicationDate && !b.publicationDate ? 0 : !a.publicationDate ? 1 : -1;
+      }
 
-      return aDate > bDate ? -1 : aDate < bDate ? 1 : 0;
+      return a.publicationDate > b.publicationDate ? -1 : a.publicationDate < b.publicationDate ? 1 : 0;
     });
   }
 }
