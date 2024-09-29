@@ -55,9 +55,9 @@ export class FeedSerializer {
     native.titleDisplay = js['itunes:title'] ? js['itunes:title'][0] : null;
     native.subCategory =
       js['itunes:category'] &&
-        js['itunes:category'][0]['itunes:category'] &&
-        js['itunes:category'][0]['itunes:category'][0].$ &&
-        js['itunes:category'][0]['itunes:category'][0].$.text
+      js['itunes:category'][0]['itunes:category'] &&
+      js['itunes:category'][0]['itunes:category'][0].$ &&
+      js['itunes:category'][0]['itunes:category'][0].$.text
         ? js['itunes:category'][0]['itunes:category'][0].$.text
         : null;
     native.type = js['itunes:type'] ? js['itunes:type'][0] : null;
